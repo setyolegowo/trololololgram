@@ -1,0 +1,112 @@
+@ 16/11/2012
+- Added ADT Priority Queue (Tested) [Arief]
+  - Ubah infotype menjadi string untuk disesuaikan dengan spesifikasi. [Arief]
+- Added ADT List Rekursif (Tested) [Arief]
+- Added ADT Pohon Biner [Arief]
+  - ADT nya belum lengkap, lihat bagian binary search tree. [Arief]
+  - Saat ini ADT sudah dapat membentuk tree dari pitakar (kode morse). [Arief]
+  - ADT belum dites secara keseluruhan. [Arief]
+
+@ 19/11/2012 08:00 WIB
+- Ditambahkan program utama dengan 2 sub-program [Setyo]
+  - 2 sub-program untuk membuat direktori dan file jika file yang diinginkan tidak ada. [Setyo]
+- saat penggabungan terjadi konflik:
+  -> makro "Next", "info" ada di file list_rekursif, p_queue (pernah dideklarasikan) [Setyo]
+
+@20/11/2012 12.00 WIB
+- Asistensi 1
+
+@ 22/11/2012 12:28 WIB
+- Program inisialisasi selesai. [Setyo]
+- Konflik makro dan tipe di list dan queue telah diperbaiki. [Arief, Setyo]
+- Interface umum selesai, tinggal difollow up bila ada perubahan [Azalea, Setyo]
+
+@ 26/11/2012 14:29 WIB
+- MARK diganti dengan karakter pagar [Setyo]
+
+@ 26/11/2012 16:30 WIB
+- Modus Penerimaan selesai namun belum digabung dengan program utama. [Rifki]
+
+@ 26/11/2012 18:00 WIB
+- BACKUP source code pertama dan kedua
+
+@ 26/11/2012 19:00 WIB
+- Modus Penulisan bertambah beberapa fungsi [Dinah]
+- ADT untuk proses encode dan decode telah selesai dibuat [Arief]
+- Sedikit perubahan di ADT Pohon Biner [Arief]
+
+@ 27/11/2012 00.53 WIB
+- Saat file digabung seluruhnya dan berhasil dicompile, saat dijalankan tidak mengeluarkan output apapun seperti perulangan tanpa henti. [Setyo]
+
+@ 27/11/2012 10:10 WIB
+- Modus konfigurasi selesai dan dapat digunakan. [Setyo]
+
+@ 28/11/2012 19:10 WIB
+- Perbaikan pada pitakar.txt (berisi kode Morse). [Arief]
+
+@ 29/11/2012 12:53 WIB
+- Perbaikan terhadap ADT Pohon Biner [Arief]
+  - ADT Pohon Biner telah dites secara keseluruhan [Arief]
+
+@ 30/11/2012 03:30 WIB
+- Modus Penulisan bagian kirim dan baca pesan terakhir sudah bisa digunakan [Setyo, Dinah]
+- Statistik Modus penulisan belum bisa digunakan [Setyo, Dinah]
+- Folder compile menjadi 1, yaitu folder "bin". Maka didalamnya terdapat "main_program" yang dapat dijalankan di OS Windows dan OS Linux [Setyo]
+
+@ 30/11/2012 15:15 WIB
+- Asistensi 2
+
+@ 01/12/2012 07:34 WIB
+- Modus Pengiriman untuk transmit pesan selesai. Tinggal yang mengirim per 30 detik. [Setyo]
+
+@ 01/12/2012 10:33 WIB
+- Transmit pesan tidak dapat dipakai lagi. [Setyo]
+
+@ 01/12/2012 18:00 WIB
+- Transmit pesan dapat digunakan kembali [Setyo, Arief]
+- Statistik Penulisan sudah dapat digunakan. [Setyo, Dinah]
+
+@ 01/12/2012 20:00 WIB
+- Proses membaca pesan masih error, yaitu id pesan pada List pesan tidak sesuai dengan pesan yang keluar di bagian baca pesan. [Rifki]
+
+@ 01/12/2012 22:00 WIB
+- Statistik pengiriman dan penerimaan sudah dapat digunakan. [Setyo]
+- Transmit 30 detik pesan sudah dapat digunakan. [Setyo, Arief]
+- Proses membaca sudah dapat digunakan dan sudah disesuaikan di List pesan, baca pesan, dan hapus pesan. [Setyo]
+- Program sudah dapat digunakan sepenuhnya, hanya tinggal merapihkan saja. Beberapa bug mungkin masih terjadi. [Setyo]
+
+@ 02/12/2012 06:25 WIB
+- Pesan belum dapat menyertakan angka karena bingung bedain puluhan gitu2, ato mau diasumsikan masukan angka 1 digit? --> tanya kak RBJ
+- Setelah transmit pesan, pesan dihapus dari Outbox, tapi tidak muncul pesan morse di sending [Azal] 
+- Catatan: [ ] siku, { } kurawal, _ dash tidak dimasukkan 
+- File Eksternal yang pesan Azal formatnya "txtwO", wkwkwkwk
+
+@ 02/12/2012 11:32 WIB
+- Transmit pesan 30 detik sudah diperbaiki. [Setyo]
+- Tampilan di program sudah dirapihkan. [Setyo, Azal]
+
+@ 02/12/2012 22.34 WIB
+- Penjelasan modus pengiriman telah ditambahkan [Arief]
+- Kurung siku [], Kurung kurawal {}, dan dash _ telah dimasukkan ke dalam inisialisasi kamus [Arief]
+  - Vertical Bar | telah dimasukkan ke dalam inisialisasi kamus [Arief]
+  - Inisialisasi kamus telah diurutkan berdasarkan kode ASCII [Arief]
+    - Tolong dicek kalau ada kesalahan.
+- Penjelasan inisialisasi konfigurasi telah ditambahkan [Arief]
+- Penjelasan modus konfigurasi telah ditambahkan [Arief]
+- Note : Semua file header telah diberi penjelasan.
+  Kalau mau ditambah sok aja. :)
+- Pemberian nama file masih ada masalah (testing di Windows)
+  - SETYO.txt(copyright)t??? -_-
+
+@ 03/12/2012 00:04 WIB
+- Perbaikan string penamaan nama file untuk proses pengiriman. [Setyo]
+
+@ 03/12/2012 02:00 WIB
+- Segmentation fault atau closing program saat setelah mengirim pesan dan setelah membaca list daftar karakter. [Setyo]
+
+@ 03/12/2012 02:21 WIB
+- Closing program mungkin terjadi saat update statistik pelanggan dan list item kamus... [Setyo]
+
+@ 03/12/2012 04:05 WIB
+- Program fix berjalan dengan baik. [Setyo]
+- Bug terdapat pada List Item. Jumlah karakter yang terdaftar pada file lebih dari besar tabel kontigunya. [Setyo]

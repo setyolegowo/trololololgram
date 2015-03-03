@@ -1,0 +1,5 @@
+How to compile???
+
+Di folder sourcenya tulis seperti dibawah ini
+
+gcc mesinkar.c mesinKata_v1.c endecode.c list.c list_rekursif.c interface.c konfigurasi.c modusKonfigurasi.c ModusPenerimaan.c ModusPengiriman.c p_queue.c penulisan.c pohon_biner.c main_program.c -o ../bin/main_program

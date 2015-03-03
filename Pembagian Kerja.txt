@@ -1,0 +1,193 @@
+############################# Anggota Kelompok ###################################
+1. Arief Rahman			13511020
+2. Azalea Fisitania		13511028
+3. Dinah Kamilah Ulfa	13511087
+4. Rifki Afina Putri	13511066
+5. Setyo Legowo			13511071
+
+######################## List kerja yang belum dibagi ############################
+- Membuat Mesin Karakter (membaca karakter yang ada di file)=> 
+- Membuat Mesin Kata (Merubah kata-kata dari bentuk file ke bentuk yang manusiawi) => 
+- Membuat ADT Priority Queue (proses pengiriman berdasarkan kedaruratan pesan) => 
+- Membuat ADT Binary Tree (decode dan encode morse dengan karakter abjad) => 
+- Membuat ADT List yang dapat mengurutkan () => 
+- Membuat Modus Penulisan => 
+- Membuat Modus Pengiriman => 
+- Membuat Modus Penerimaan => 
+- Membuat Modus Pengaturan => 
+- Pengabungan program secara keseluruhan => Bersama-sama
+
+########################### Yang masih ditanyakan ################################
+
+####################### File yang dipastikan harus ada ###########################
+Current Dir
+| - bin
+| - | [namaADT].h
+| - | [namaADT].c
+| - | [driverADT].c
+| - | programUtama.c
+| - Inbox
+| - | YYMMDDHHMMSS-<pengirim>.txt
+| - Outbox
+| - | YYMMDDHHMMSS-<pengirim>.txt
+| - pengaturan
+| - | currentQueue.txt
+| - | konfigurasi.txt
+| - | karakterSpesial.txt
+| - | listHarga.txt
+| - | listPelanggan.txt
+| - | listInbox.txt
+| - | listOutbox.txt
+| - | listSending.txt
+| - | statistik.date.txt
+| - | statistik.pesan.txt
+| - | statistik.pelanggan.txt
+| - Sending
+| - | YYMMDDHHMMSS-<pengirim>.txt [morse coded]
+| TB_03_B.exe
+
+######################## Penjelasan file-file diatas #############################
+./TB_03_B.exe
+	 => Program Utama
+./Outbox/statistik.pelanggan.txt
+	 => Isinya dikelompokkan per-pelanggan. Contoh:
+		[user_name] [jumlah kata] [jumlah pesan] [total harga]
+./Sending/statistik.date.txt
+	 => Isinya dikelompokkan per-tanggal. Contoh:
+		[tanggal] [jam] [jumlah]
+./Sending/currentQueue.txt
+	 => Isinya ada nilai prioritas dan nama-file
+		[prioritas] [Nama File]
+./Inbox/statistik.pesan.txt
+	 => Isinya dikelompokkan per-pelanggan. Contoh:
+		[user_name] [jumlah pesan] [jumlah buka pesan]
+./pengaturan/konfigurasi.txt
+	 => 
+./pengaturan/karakterSpesial.txt
+	 => Setiap karakter khusus nantinya yang ada pada file pesan di inbox maupun inbox akan selalu
+	    diawali dengan kata KARAKTER. Misal PAGAR/HASH ('#') akan ditulis CHARHASH untuk menghindari
+	    dari kalimat yang maknanya menghilang.
+./pengaturan/listHarga.txt
+	 => 
+./pengaturan/listPelanggan.txt
+	 => 
+
+############################# Cara Kerja Program #################################
+1. Inisialisasi
+1.1 Jika program tidak menemukan file dan atau folder yang dibutuhkan program
+	maka harus dibuat dan program direset ke kedalam fresh install (default
+	configuration). (udah, lulus compile)
+1.2 Jika ada file konfigurasi yang error dibaca, maka file konfigurasi direset ke
+	keadaan default (membuat file-file yang error ke default). (udah, lulus compile)
+1.3 Jika tidak maka siapkanlah... (udah)
+1.3.1 Konfigurasi terakhir (belum ada konfigurasi yang diperlukan)
+1.3.2 Membuat list karakter khusus (udah, lulus compile)
+1.3.3 Membuat list daftar harga (udah, lulus compile)
+1.3.4 Membuat list daftar pelanggan (udah, lulus compile)
+1.3.5 Membuat list file pesan di Inbox, Sending, dan Outbox (udah, lulus compile)
+1.3.6 Menjalankan proses pengiriman dari folder Sending ke folder Inbox. (udah, lulus compile)
+
+2. Menu (Modus). Pengguna memilih menu yang akan digunakan
+2.1 Menu untuk Modus Penulisan
+	 a. Membuat pesan (Kirim pesan)
+		- Cek nama pengguna pengirim lalu penerima apakah sudah terdaftar atau
+		  belum
+		- Pesan harus dapat direpresentasikan dengan semua karakter (abjad, tanda
+		  baca, angka, dan karakter khusus) dapat diubah ke abjad-abjad agar dapat
+		  dikirimkan melalui telegram/kode morse. Maka selalu ada pengecekan semua
+		  karakter yang dimasukkan pengguna sebelum melanjutkan ke proses 
+		  selanjutnya.
+		- Jika kedua hal diatas tidak dipenuhi maka mengulang masukan dengan
+		  maksimum mengulang 3 kali. Jika sudah 3 kali belum berhasil maka sistem
+		  batal mengirimkan pesan dan keluar dari modus Penulisan.
+		- Semua pesan disimpan ke dalam suatu file.
+		  -> Pesan yang terdiri dari abjad disimpan ke dalam folder Outbox
+		- Nama file pesan memiliki ketentuan:
+		  "YYMMDDHHMMSS-<pengirim>.txt" dimana
+		  <pengirim> adalah nama pengirim
+		  YY adalah 2 bilangan terakhir dari tahun
+		  MM adalah bulan pengiriman
+		  DD adalah tanggal pengiriman
+		  HH adalah jam pengiriman
+		  MM adalah menit pengiriman
+		  SS adalah detik pengiriman
+		- Setelah proses pengiriman diatas selesai ditampilkan ke layar jumlah
+		  kata dari masing-masing jenis kata dan biaya
+		- ???? Prioritas ????
+	 b. Menghitung Harga
+		- Mencetak informasi perintah pesan terakhir yang dikirim. Infomasi itu
+		  meliputi: pengirim, penerima, perhitungan harga dan jumlah kata dari 
+		  masing-masing jenis kata dari pesan terakhir yang dikirim.
+	 c. Statistik
+		- Statistik pada modus ini meliputi: Nama pengirim, Jumlah Pesan yang
+		  dikirim, Rata-rata jumlah total kata dalam sebuah pesan, dan total harga
+		  dari pesan-pesan yang pernahdikirim.
+	 d. Ubah Modus Penggunaan
+		- Pindah ke menu utama
+	 e. Keluar
+		- Keluar dari program
+2.2 Menu untuk modus pengiriman
+	 a. Transmit Semua Pesan
+		- Membaca semua file pengiriman yang ada di Outbox dan mentranslasikan ke
+		  file lain yang berisi sandi morse dan meletakkannya pada folder Sending
+		  dengan nama file yang sama. Setelah itu, file pesan yang ada di folder
+		  Outbox dihapus.
+		- Setiap program di jalankan atau menu dipilih atau saat program sedang
+		  berjalan maka pesan-pesan pada folder Sending ditranslasikan ke folder
+		  Outbox dengan diantrikan dengan selang waktu 30 detik baru ditransfer.
+		  Antriannya berdasarkan waktu pengiriman ???dan prioritas pesan???.
+	 b. Statistik
+		- Mencetak statistik jumlah pengiriman pesan pada tiap jamnya.
+	 c. Ubah Modus Penggunaan
+		- Pindah ke menu utama
+	 d. Keluar
+		- Keluar dari program
+2.3 Modus Penerimaan
+	 a. List Pesan
+		- Menampilkan nama-file yang telah dikirim (pesan-pesan yang ada di
+		  Inbox).
+		- Menampilkan ID setiap file yang akan dibuka.
+		- Menampilkan ID dilakukan per halaman misalnya berapa gitu.
+	 b. Baca Pesan
+		- Lalu untuk membuka file pesan, pengguna harus memasukkan ID yang
+		  ditampilkan di submenu List Pesan
+		- Pesan yang disampaikan adalah pesan hasil konversi dari representasi
+		  alfabetis ke pesan yang seharusnya.
+	 c. Hapus Pesan
+		- Untuk menghapus pesan, pengguna harus memasukkan ID nama file yang akan
+		  dihapus di submenu List Pesan
+		- Pesan yang dihapus berarti file pesan yang ada di Inbox dihapus.
+	 d. Statistik
+		- Statistik pada modus ini meliputi: Nama Penerima, Jumlah Pesan yang
+		  diterima dan Jumlah pesan yang dibaca.
+	 e. Ubah Modus Penggunaan
+		- Pindah ke menu utama
+	 f. Keluar
+		- Keluar dari program
+2.4 Modus Pengaturan
+	 a. Daftar Harga
+		- Menampilkan list harga dari jenis-jenis kata
+		- Jika program pertama kali dijalankan, maka harga akan diset secara
+		  default.
+		- Harga dapat diatur dengan edit di file konfigurasi.
+	 b. List Item Kamus
+		- Mencetak ke layar daftar item yang telah terdaftar.
+		- Jika program pertama kali dijalankan, maka list item (karakter khusus)
+		  akan diset secara default.
+		- List item kamus dapat diatur dengan edit di file konfigurasi.
+	 c. Penambahan Item Kamus 
+		- Menambah item baru ke dalam kamus, jika item tersebut belum terdefinisi
+		  ke dalam kamus.
+	 d. Penghapusan Item Kamus
+		- Menghapus item yang telah terdefinisi pada kamus.
+	 e. List Pelanggan
+		- Mencetak ke layar list pelanggan yang telah terdaftar di sistem.
+	 f. Penambahan Pelanggan
+		- Mendaftarkan pelanggan baru ke dalam sistem, jika pelanggan belum
+		  terdaftar dalam sistem.
+	 g. Penghapusan Pelanggan
+		- Menghapus entri pelanggan yang terdefenisi dalam sistem.
+	 h. Ubah Modus Penggunaan
+		- Pindah ke menu utama
+	 i. Keluar
+		- Keluar dari program
